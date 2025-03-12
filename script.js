@@ -198,4 +198,14 @@ let times = {
   
     document.getElementById('totalTime').textContent = "Время на задачу: 0 мин";
   }
+
+// Запускаем код, когда страница загрузится полностью
+document.addEventListener('DOMContentLoaded', function() {
+  // Для всех полей, где type="number", добавляем «слушатель»
+  document.querySelectorAll('input[type="number"]').forEach(function(input) {
+    input.addEventListener('input', calculateTotalTime);
+  });
+});
+
+
   
