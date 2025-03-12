@@ -183,7 +183,7 @@ function calculateTotalTime() {
   let total = cbSum + animSum + illSum + presSum + guideSum;
 
   // Преобразование минут в часы и минуты
-  let minutesInDay = 6 * 60; // 360 минут в одном "рабочем дне"
+  let minutesInDay = 8 * 60; // 360 минут в одном "рабочем дне"
   let days = Math.floor(total / minutesInDay);
   let remainder = total % minutesInDay;
   let hours = Math.floor(remainder / 60);
