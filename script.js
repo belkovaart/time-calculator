@@ -21,12 +21,12 @@ let times = {
       storyCharacter: 480 // 8 часов = 480 мин
     },
     presentation: {
-      adaptation: 5,
+      adaptation: 15,
       template: 30,
       newStyle: 60
     },
     guideLongread: {
-      adaptation: 5,
+      adaptation: 15,
       standard: 30,
       nonstandard: 60
     }
