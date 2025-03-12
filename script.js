@@ -12,7 +12,7 @@ let times = {
       standard: 30,
       nonstandard: 60,
       textReplace: 5,
-      resize: 5
+      resize: 10
     },
     illustration: {
       adaptation: 30,
