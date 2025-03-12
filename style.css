@@ -100,6 +100,10 @@ body {
     border-radius: 20px;
     border: 1px solid #ccc;
   }
+
+  .bold {
+    font-weight: bold;
+  }
   
   /* Блок кнопок и итогового времени */
   .actions {
@@ -170,4 +174,68 @@ body {
     gap: 10px;
     margin-top: 20px;
   }
+
+  .category-row input.selected {
+    border: 1px solid black !important;
+  }
+
+  .work-title-container {
+    display: flex;
+    align-items: center;
+  }
   
+  .work-title-container .work-title {
+    margin-right: 10px;  /* Здесь задайте нужный отступ между названием и иконкой */
+    font-size: 1rem;     /* Можно настроить размер шрифта, если требуется */
+  }
+  
+  .info-icon {
+    font-size: 0.8rem;
+    padding-left: 7px;
+    padding-right: 7px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    color: #ccc;
+    margin-left: 5px;
+    font-family: Arial, sans-serif;
+    border: 1px solid #ccc;
+    border-radius: 30px;
+
+  }
+
+  /* Контейнер подсказки */
+.tooltip {
+  position: relative;      /* Чтобы позиционировать подсказку относительно значка */
+  display: inline-block;   /* Выстраивается в строку с текстом */
+  cursor: pointer;
+  margin-left: 0px;        /* Отступ слева для отделения от метки */
+}
+
+/* Скрытый элемент подсказки */
+.tooltip .tooltip-text {
+  visibility: hidden;       /* По умолчанию скрыто */
+  width: 220px;             /* Ширина подсказки (можно подправить) */
+  background-color: #63666E;   /* Фоновый цвет подсказки */
+  color: #fff;              /* Цвет текста */
+  text-align: left;         /* Выравнивание текста по левому краю */
+  padding: 8px;             /* Внутренние отступы */
+  border-radius: 6px;       /* Скругление углов */
+  font-size: 0.8rem;        /* Размер шрифта для подсказки */
+  
+  /* Позиционирование */
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;             /* Расположим выше значка */
+  left: 50%;
+  transform: translateX(-50%); /* Центрирование по горизонтали */
+  
+  /* Плавное появление */
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+/* Показываем подсказку при наведении на значок */
+.tooltip:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}
