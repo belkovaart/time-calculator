@@ -142,9 +142,13 @@ function calculateTotalTime() {
             + cbNonstandard * times.conceptBanner.nonstandard
             + cbTextReplace * times.conceptBanner.textReplace;
 
-  // Добавляем время на ресайзы (кол-во ресайзов * суммарное кол-во баннеров * время 1 ресайза)
-  let cbTotalBanners = cbReused + cbStandard + cbNonstandard + cbTextReplace;
-  cbSum += cbResize * cbTotalBanners * times.conceptBanner.resize;
+ // Сумма остальных типов баннеров
+ let cbTotalBanners = cbReused + cbStandard + cbNonstandard + cbTextReplace;
+ // Если ни один баннер не выбран, но введены ресайзы, считаем 1 элемент
+ if (cbTotalBanners === 0 && cbResize > 0) {
+   cbTotalBanners = 1;
+ }
+ cbSum += cbResize * cbTotalBanners * times.conceptBanner.resize;
 
   // --- Анимация ---
   let animSum = animReused      * times.animation.reused
@@ -152,8 +156,12 @@ function calculateTotalTime() {
               + animNonstandard * times.animation.nonstandard
               + animTextReplace * times.animation.textReplace;
 
-  let animTotal = animReused + animStandard + animNonstandard + animTextReplace;
-  animSum += animResize * animTotal * times.animation.resize;
+ let animTotal = animReused + animStandard + animNonstandard + animTextReplace;
+ // Если ни один тип анимации не выбран, но введены ресайзы, считаем 1 элемент
+ if (animTotal === 0 && animResize > 0) {
+   animTotal = 1;
+ }
+ animSum += animResize * animTotal * times.animation.resize;
 
   // --- Иллюстрация ---
   let illSum = illAdaptation     * times.illustration.adaptation
