@@ -14,6 +14,8 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
+    max-width: 1200px;   /* Ограничение ширины, как у #mainScreen */
+    margin: 0 auto;      /* Центрирование на странице */
   }
   
   .settings-button {
@@ -51,7 +53,7 @@ body {
   }
   
   /* На экранах среднего размера — 2 колонки */
-  @media (max-width: 729px) and (min-width: 500px) {
+  @media (max-width: 1440px) and (min-width: 500px) {
     .categories-container {
       grid-template-columns: repeat(2, 1fr);
     }
@@ -60,7 +62,7 @@ body {
   /* На маленьких экранах — 1 колонка */
   @media (max-width: 499px) {
     .categories-container {
-      grid-template-columns: 1fr;
+      grid-template-columns: (2, 1fr);
     }
   }
   
@@ -92,8 +94,11 @@ body {
   
   .category-row input {
     width: 50px;
-    padding: 3px;
-    text-align: center;
+    padding: 5px;
+    padding-left: 10px; /* отступ от левого края */
+    text-align: left;
+    border-radius: 20px;
+    border: 1px solid #ccc;
   }
   
   /* Блок кнопок и итогового времени */
@@ -108,6 +113,9 @@ body {
     padding: 8px 16px;
     font-size: 0.9rem;
     cursor: pointer;
+    background-color: black;
+    color: #fff;
+    border-radius: 50px;
   }
   
   #totalTime {
