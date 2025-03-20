@@ -21,7 +21,7 @@ let times = {
     storyCharacter: 480 // 8 часов = 480 мин
   },
   presentation: {
-    adaptation: 15,
+    adaptation: 10,
     template: 30,
     newStyle: 60
   },
